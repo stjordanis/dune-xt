@@ -85,6 +85,7 @@ jobs:
     module: 'dune-xt'
 
 - job:
-  - script: |
-      echo ff
-    displayName: 'Misc Checks'
+  steps:
+    - bash: |
+        [[ -f ./.gitsuper ]] && echo "Please remove .gitsuper from the repo" && exit 1
+      displayName: 'Misc Checks'

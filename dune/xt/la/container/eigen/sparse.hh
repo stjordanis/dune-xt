@@ -289,7 +289,7 @@ public:
   template <class T1, class T2>
   inline void mv(const EigenBaseVector<T1, ScalarType>& xx, EigenBaseVector<T2, ScalarType>& yy) const
   {
-    yy.backend().transpose() = backend() * xx.backend();
+    yy.backend().noalias() = backend() * xx.backend();
   }
 
   template <class V1, class V2>

@@ -72,6 +72,8 @@ if(MKL_FOUND)
 else(MKL_FOUND)
   find_package(LAPACKE)
 endif(MKL_FOUND)
+find_package(BZip2)
+dune_register_package_flags(LIBRARIES ${BZIP2_LIBRARIES})
 
 # intel mic and likwid don't mix
 if(NOT CMAKE_SYSTEM_PROCESSOR STREQUAL "k1om")
